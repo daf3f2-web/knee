@@ -6,6 +6,9 @@ This takes about 20 minutes, one time. Everything is free.
 
 ## Step 1 — Make the progress sheet (Google Sheets)
 
+✅ **Done (11/11/2026).** The sheet: https://docs.google.com/spreadsheets/d/1NilnZiBsCx8j7YPCaAXo4z8L0G6p2yYd9Ar3cp8OG6M/edit
+— progress shows up on its **Daily** tab. The steps below are kept for reference.
+
 1. Go to **sheets.new** while signed in to your Google account. Name it **Knee exercise log**.
 2. In the menu, choose **Extensions → Apps Script**.
 3. Delete the code that's there. Open `google-sheet-script.gs` (in this folder), copy all of it, and paste it in.
