@@ -1,9 +1,9 @@
 // Network first, so updates show up right away; falls back to the saved copy when offline.
-const CACHE = 'knee-v2';
+const CACHE = 'knee-v3';
 const IMGS = ['balance', 'bike', 'bridge', 'clamshell', 'gastroc', 'ham-long-sit', 'ham-towel', 'heel-raise', 'heel-slides',
   'knee-curl', 'laq', 'lunge-forward', 'lunge-trainer', 'quad-prone', 'quad-sets', 'saq', 'side-step', 'sit-stand', 'slr',
   'soleus', 'squat-single', 'step-lateral', 'wall-slide'];
-const CORE = ['./', 'style.css', 'app.js', 'exercises.js', 'config.js', 'mateo/', 'kristen/']
+const CORE = ['./', 'style.css', 'app.js', 'exercises.js', 'figures.js', 'config.js', 'mateo/', 'kristen/']
   .concat(IMGS.map(n => `img/${n}.jpg`));
 
 self.addEventListener('install', e => {

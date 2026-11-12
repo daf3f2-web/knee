@@ -70,7 +70,9 @@ h1, h2, h3 { margin: 0; font-weight: 650; }
 .card.done { background: var(--done-bg); border-color: transparent; }
 .card .open { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; border: 0; background: none; padding: 0; text-align: left; }
 .thumb { width: 64px; height: 64px; flex: none; border-radius: 10px; background: #fff; display: grid; place-items: center; overflow: hidden; }
-.thumb img { max-width: 100%; max-height: 100%; }
+.thumb img, .thumb svg { max-width: 100%; max-height: 100%; }
+.pic svg { width: 100%; max-height: 260px; }
+.timer .pic svg { max-height: 150px; }
 .card .info { min-width: 0; }
 .tag { font-size: 12px; color: var(--muted); }
 .tag .star { color: #d9a400; }

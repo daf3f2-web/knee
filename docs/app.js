@@ -150,7 +150,7 @@
         const ex = LIB[x.it.ex];
         html += `<div class="card ${st.done[x.key] ? 'done' : ''}">
           <button class="open" data-open="${x.key}">
-            <div class="thumb"><img src="${IMG}${ex.img}.jpg" alt="" loading="lazy"></div>
+            <div class="thumb">${window.FIG[ex.img]}</div>
             <div class="info"><div class="tag">${tagHTML(x.it)}</div><div class="name">${esc(ex.name)}</div><div class="dose">${dose(ex)}</div></div>
           </button>
           <button class="check" data-check="${x.key}" aria-label="Mark ${esc(ex.name)} done">${CHECK}</button>
@@ -206,7 +206,7 @@
       <button class="iconbtn close" data-close aria-label="Close">✕</button>
       <div class="tag">${tagHTML(x.it)}${x.slot ? ' · ' + x.slot : ''}</div>
       <h2>${esc(ex.name)}</h2>
-      <div class="pic"><img src="${IMG}${ex.img}.jpg" alt="Drawing of ${esc(ex.name)} from the trainer's sheet"></div>
+      <div class="pic">${window.FIG[ex.img]}</div>
       <div class="chips"><span class="chip">${dose(ex)}</span>${ex.pace ? `<span class="chip">1 rep every ${ex.pace} sec</span>` : ''}${ex.gear ? `<span class="chip gear">${esc(ex.gear)}</span>` : ''}</div>
       <ol>${ex.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
       ${ex.tip ? `<div class="tipbox">${esc(ex.tip)}</div>` : ''}
@@ -296,7 +296,7 @@
         <button class="btn secondary" data-tctl="pause" id="t-pause">Pause</button>
         <button class="btn secondary" data-tctl="skip">Skip ›</button>
       </div>
-      <div class="pic"><img src="${IMG}${ex.img}.jpg" alt=""></div>
+      <div class="pic">${window.FIG[ex.img]}</div>
       <div class="hint">Turn your ringer on (switch on the side) to hear the beeps.</div>
     </div>`);
     keepAwake(true);
