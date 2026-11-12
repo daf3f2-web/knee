@@ -1,0 +1,13 @@
+{
+  "name": "Mateo's Knee",
+  "short_name": "Mateo Knee",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f3ef",
+  "theme_color": "#0f6e56",
+  "icons": [
+    { "src": "../icons/mateo-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "../icons/mateo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
