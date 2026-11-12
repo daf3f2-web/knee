@@ -1,16 +1,15 @@
 // Network first, so updates show up right away; falls back to the saved copy when offline.
-const CACHE = 'knee-v3';
-const IMGS = ['balance', 'bike', 'bridge', 'clamshell', 'gastroc', 'ham-long-sit', 'ham-towel', 'heel-raise', 'heel-slides',
-  'knee-curl', 'laq', 'lunge-forward', 'lunge-trainer', 'quad-prone', 'quad-sets', 'saq', 'side-step', 'sit-stand', 'slr',
-  'soleus', 'squat-single', 'step-lateral', 'wall-slide'];
-const CORE = ['./', 'style.css', 'app.js', 'exercises.js', 'figures.js', 'config.js', 'mateo/', 'kristen/']
-  .concat(IMGS.map(n => `img/${n}.jpg`));
+const CACHE = 'knee-v4';
+const CORE = ['./', 'style.css', 'app.js', 'exercises.js', 'figures.js', 'config.js', 'mateo/', 'kristen/'];
 
 self.addEventListener('install', e => {
   self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then(c => Promise.all(CORE.map(u => c.add(u).catch(() => {})))));
 });
-self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
+self.addEventListener('activate', e => e.waitUntil(
+  caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+    .then(() => self.clients.claim())
+));
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
